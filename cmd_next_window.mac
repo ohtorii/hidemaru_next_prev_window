@@ -1,0 +1,43 @@
+/*	タブモードで次のウィンドウへ。
+*/
+
+//////////////////////////////////////////////////////////////////////////////
+//カスタマイズ
+//////////////////////////////////////////////////////////////////////////////
+/*最小化している秀丸エディタを対象に含めるかどうか
+	false 	含めない
+	true	含める
+*/
+#g_search_all_hidemaru=false;
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//メイン処理
+//////////////////////////////////////////////////////////////////////////////
+#c=hidemarucount;
+#i=0;
+#idFrom=tabgroup;
+#idNext=-1;
+#idMin=-1;
+while( #i<#c){
+	#idGet=tabgroup[#i];
+	#state=windowstate[getcurrenttab(0,#idGet)];
+	if(#g_search_all_hidemaru){
+		#state=1;
+	}
+	if( ( 1==#state) || (3==#state)){
+		if( #idGet>#idFrom){
+			if( #idNext==-1||#idGet<#idNext)#idNext=#idGet;
+		}
+		if( #idMin==-1||#idGet<#idMin)#idMin=#idGet;
+	}
+	#i=#i+1;
+}
+
+if( #idNext>=0){
+	setactivehidemaru getcurrenttab( 0,#idNext);
+} else {
+	setactivehidemaru getcurrenttab( 0,#idMin);
+}
