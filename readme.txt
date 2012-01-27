@@ -1,15 +1,15 @@
-�^�u�O���[�v���ړ�����G�ۃ}�N��
+﻿タブグループを移動する秀丸マクロ
 
 
-���������@
-�V���[�g�J�b�g�L�[�Ɋ��蓖�Ăĉ������B
-�i��j
+＊導入方法
+ショートカットキーに割り当てて下さい。
+（例）
 	ALT-Left	cmd_prev_window.mac
 	ALT-Right	cmd_next_window.mac
 
 
 
-������
-	�ŏ��������^�u�O���[�v�ɂ͐؂�ւ��܂���B
-	�i�}�N���`���̕ϐ���false����true�֏��������邱�ƂŁA�ŏ��������^�u�O���[�v���Ώۂɂ��邱�Ƃ��o���܂��B�j
+＊特徴
+	最小化したタブグループには切り替えません。
+	（マクロ冒頭の変数をfalseからtrueへ書き換えることで、最小化したタブグループも対象にすることが出来ます。）
 
